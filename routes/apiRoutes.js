@@ -156,7 +156,7 @@ module.exports = app => {
 
         db.Note.findOneAndRemove({ _id: req.body.noteId })
             .then(function (dbNote) {
-                db.Article.findOneAndUpdate({ _id: req.body.ArticleId }, { note: "" }, { new: true })
+                db.Article.findOneAndUpdate({ _id: req.body.id }, {$unset: {note: null }}, { new: true })
                     .then(function (dbArticle) {
                         res.json(dbArticle);
                     })

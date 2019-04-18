@@ -51,7 +51,7 @@ $(document).ready(function () {
           })
             .then(function(data) {
                 noteDiv.data("note","");
-                noteP.text($("Add a note"));
+                noteP.text("Add a note");
                 noteP.data("noteid","");
                 $('#editNote').modal('hide');
             });
