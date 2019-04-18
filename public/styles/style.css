@@ -1,0 +1,68 @@
+@font-face {
+    font-family: espn_italics;
+    src: url(../fonts/esp/esp_ital.ttf);
+  }
+
+.news {
+    margin: 2px;
+    width: 17rem;
+    min-height: 250px;
+}
+
+.newsImage {
+    height: 150px;
+}
+
+a {
+    color: black;
+}
+
+.modalContentAlert {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.note {
+    background:  #ffff88;
+    border:1px solid #E8E8E8; 
+    padding: 2px; 
+    margin-right: 5px;
+    font-family:'Reenie Beanie';  
+    font-size: 20px; 
+    box-shadow: 5px 5px #888888;
+    height: 32px;
+}
+
+#noteText {
+    background:  #ffff88;
+    border:1px solid #E8E8E8; 
+    font-family:'Reenie Beanie';  
+    font-size: 20px; 
+    box-shadow: 5px 5px #888888;
+}
+
+.logoHeader {
+    text-shadow: 2px 2px gray;
+    font-family: espn_italics
+}
+
+#refreshHeader {
+    color: gray;
+    font-family: espn_italics;
+    /* font-size: 10px; */
+}
+
+.note {
+    display: none;
+    cursor: pointer;
+}
+
+.fixLine{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.modalColor,.modal-footer {
+    background-color: lightgray
+}

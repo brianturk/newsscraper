@@ -1,0 +1,88 @@
+<div id="mainContainer" class="container">
+  <div class="row mt-2">
+    <div class="col-8  logoHeader">
+      <h1>ESPN News Scraper</h1>
+    </div>
+    <div class="col-4 text-right mt-auto">
+      <a id="refreshHeader" href="#">
+        <h5>Get New Articles&nbsp<i class="fas fa-sync-alt"></i></h5>
+      </a>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-12">
+
+      {{#each articles}}
+      <div class="card bg-light float-left news" data-id="{{articleId}}">
+        <div class="newsImage bg-dark">
+          <a href="{{link}}"><img class="card-img-top newsImage" src="{{image}}" alt=""></a>
+        </div>
+        <div class="card-body d-flex flex-column maxHeight p-1">
+          <a href="{{link}}">
+            <h6 class="card-title">{{title}}</h6>
+          </a>
+          <div class="mt-auto note mb-2" data-note="{{note}}" data-title="{{title}}" data-id="{{_id}}"
+            data-noteId="{{noteId}}">
+            <p class="noteP">{{#if noNote}}Add a note{{else}}{{note}}{{/if}}</p>
+          </div>
+          {{!-- <div class="row pl-3">
+            <a href="{{link}}" class="btn mr-1 btn-primary"><i class="fas fa-newspaper"></i></a>
+            <button type="button" class="btn btn-primary addNote"><i class="far fa-sticky-note"></i></button>
+          </div> --}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal for Editing Note -->
+<div class="modal fade" id="editNote" tabindex="-1" role="dialog" aria-labelledby="editNote" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header modalColor">
+        <h5 class="modal-title" id="exampleModalLabel">Edit the Note for '<span id="editNoteArticalName"></span>'</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body pb-0 pl-0 pr-0">
+        <form class="needs-validation" id="editNoteForm">
+          <div class="form-group row fixLine">
+            <div class="col-sm-12">
+              <div class="form-group">
+                {{!-- <label for="createTitle">Story title</label> --}}
+                <textarea type="text" id="noteText" class="form-control" aria-describedby="Note Text" autofocus
+                  required></textarea>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" id="editNoteDelete" class="btn btn-secondary">Delete Note</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-info" id="saveNote">Save</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Modal for showing update of scraping -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+  id="scrapingNews">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-header modalColor">
+    </div>
+    <div class="modal-content modalContentAlert">
+      <h1>Please wait, scraping news</h1>
+    </div>
+    <div class="modal-footer">
+    </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "name": "newsscraper",
+  "version": "1.0.0",
+  "description": "News Scraper using MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianturk/newsscraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brianturk/newsscraper/issues"
+  },
+  "homepage": "https://github.com/brianturk/newsscraper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.2",
+    "morgan": "^1.9.1"
+  }
+}

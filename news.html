@@ -1,0 +1,39 @@
+axios
+                                .get(link)
+                                .then(function (response) {
+                                    var $$ = cheerio.load(response.data);
+                                    // if (id === 26529768) {
+                                    //     console.log(response);
+                                    // }
+                                    $$("picture").each(function (i, element) {
+                                        var sources = $$(element).find("source");
+                                        // console.log(sources.initialize[0]);
+                                        // console.log(sources[0].data("srcset"));
+                                        $$(element).find("source").each(function (i, element) {
+
+                                            $$(element).find("attrib").each(function (i, element) {
+                                                if (id === 26542145) {
+                                                    console.log($$(element));
+                                                }
+                                                if ((image === "") && ($$(element).data("srcset"))) {
+                                                    image = $$(element).data("srcset");
+                                                }
+                                                // console.log($$(element).data("srcset"))
+                                            })
+                                          
+                                        })
+                                    })
+
+                                    console.log(title);
+                                    console.log(link);
+                                    console.log(id);
+                                    console.log(image);
+
+                                })
+                                .catch(err => {
+                                    console.log(link);
+                                    console.log(err);
+                                })
+
+
+                                // <a name="&amp;lpos=fp:feed:1:coll:headlines:7" href="/chalk/insider/story/_/id/26529708/early-nfl-win-totals-mike-clay-projections-all-32-teams" class=" icon-font-before icon-espnplus-before" data-mptype="headline">Win total projections for every NFL team</a>
