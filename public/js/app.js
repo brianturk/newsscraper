@@ -23,7 +23,9 @@ $(document).ready(function () {
         $("#editNoteArticalName").text(noteDiv.data("title"));
         $("#noteText").val(noteDiv.data("note"));
         $('#editNote').modal('show');
-        $('#noteText').focus();
+        setTimeout(function (){
+          $('#noteText').focus();
+      }, 1000);
     })
 
     $(document).on('click','#refreshHeader', function(){
