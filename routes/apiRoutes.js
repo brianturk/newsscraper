@@ -108,11 +108,28 @@ module.exports = app => {
     // Route for saving/updating an Article's associated Note
     app.post("/articles/:id", function (req, res) {
         //delete old note
-        // console.log(req.body);
+        console.log(req.body);
         var oldNoteId = req.body.oldNoteId
 
+      
         db.Note.findOneAndRemove({ _id: oldNoteId })
             .then(function (dbNote) {
+                db.Note.create({
+                    body: req.body.body
+                })
+                    .then(function (dbNote) {
+                        return db.Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true });
+                    })
+                    .then(function (dbArticle) {
+                        // If we were able to successfully update an Article, send it back to the client
+                        res.json(dbArticle);
+                    })
+                    .catch(function (err) {
+                        // If an error occurred, send it to the client
+                        res.json(err);
+                    });
+            })
+            .catch(function(err) {
                 db.Note.create({
                     body: req.body.body
                 })
